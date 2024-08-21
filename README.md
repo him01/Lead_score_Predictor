@@ -1,5 +1,8 @@
 # Lead_score_Predictor
-This project is a FastAPI-based web application that predicts lead conversion scores based on input data. The model used is a RandomForestClassifier trained on historical lead data.
+This project is a FastAPI-based web application that predicts lead conversion scores based on input data. The model used is a LGBMClassifier trained on historical lead data.
+
+<img width="553" alt="image" src="https://github.com/user-attachments/assets/56839854-8f87-4b57-b138-ed4d9333e03f">
+
 
 Features
 Lead Scoring Prediction: Upload a CSV file with lead data, and get predictions on whether the leads will convert.
@@ -34,7 +37,7 @@ Install the dependencies:
 bash
 Copy code
 pip install -r requirements.txt
-Ensure the trained model file (Random_forest_model_Leadscore.pkl) is in the project directory.
+Ensure the trained model file (best_model.pkl) is in the project directory.
 
 Running the Application
 Run the FastAPI application using Uvicorn:
@@ -56,7 +59,7 @@ Example request:
 
 bash
 Copy code
-curl -X POST "http://127.0.0.1:8000/upload-predict" -F "file=@sample_leads_data.csv"
+curl -X POST "http://127.0.0.1:8000/upload-predict" -F "file=@random_leads.csv"
 The response will contain predictions indicating which leads are likely to convert.
 
 # Project Structure
