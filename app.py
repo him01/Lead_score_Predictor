@@ -1,17 +1,19 @@
+# 1. Library imports
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from pycaret.classification import load_model, predict_model
 from fastapi.responses import Response
 import pandas as pd
 import io
-
+# 2. Create the app object
 app = FastAPI()
 
-# Load the trained model
+# 3.Load the trained model
 model = load_model('best_model')
 
-# Store predictions in a dictionary (in-memory) for demonstration purposes
+# 4.Store predictions in a dictionary (in-memory) for demonstration purposes
 predictions_storage = {}
 
+# 5.Index route, opens automatically on http://127.0.0.1:8000
 @app.get("/")
 def read_root():
     return {"message": "Welcome to the FastAPI Lead Scoring API!"}
